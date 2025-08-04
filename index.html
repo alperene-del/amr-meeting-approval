@@ -1,0 +1,98 @@
+def create_index_page():
+    """GitHub Pages için ana sayfa oluştur"""
+    
+    index_html = f"""<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMR Meeting Approval System</title>
+    <style>
+        body {{
+            font-family: 'Segoe UI', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }}
+        .container {{
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }}
+        .header {{
+            text-align: center;
+            color: #0078D4;
+            margin-bottom: 30px;
+        }}
+        .approval-list {{
+            list-style: none;
+            padding: 0;
+        }}
+        .approval-item {{
+            background: #f8f9fa;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #0078D4;
+        }}
+        .approval-link {{
+            color: #0078D4;
+            text-decoration: none;
+            font-weight: bold;
+        }}
+        .approval-link:hover {{
+            text-decoration: underline;
+        }}
+        .status {{
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            background: #ffc107;
+            color: #212529;
+        }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AMR Meeting Approval System</h1>
+            <p>Otomatik Toplantı Tutanağı Onay Sistemi</p>
+        </div>
+        
+        <h2>📋 Aktif Onay Sayfaları</h2>
+        <ul class="approval-list">
+            <li class="approval-item">
+                <a href="amr_1754333909.html" class="approval-link">AMR Test Meeting 1754329258476.txt</a>
+                <span class="status">Onay Bekliyor</span>
+            </li>
+            <li class="approval-item">
+                <a href="amr_1754333915.html" class="approval-link">AMR Test Meeting Transcript.txt</a>
+                <span class="status">Onay Bekliyor</span>
+            </li>
+            <li class="approval-item">
+                <a href="amr_1754333921.html" class="approval-link">LiveTranscribe Transcript 030825.txt</a>
+                <span class="status">Onay Bekliyor</span>
+            </li>
+        </ul>
+        
+        <div style="margin-top: 40px; padding: 20px; background: #e7f3ff; border-radius: 8px;">
+            <h3>📊 Sistem Bilgileri</h3>
+            <p><strong>Google Sheets:</strong> <a href="https://docs.google.com/spreadsheets/d/{CONFIG['SHEETS_ID']}" target="_blank">Tutanak Veritabanı</a></p>
+            <p><strong>Son Güncelleme:</strong> {datetime.now().strftime('%d.%m.%Y %H:%M')}</p>
+            <p><strong>Durum:</strong> Sistem Aktif ✅</p>
+        </div>
+    </div>
+</body>
+</html>"""
+    
+    print("📄 INDEX.HTML İÇERİĞİ:")
+    print("=" * 50)
+    print(index_html)
+    print("=" * 50)
+    print("💾 Bu içeriği index.html olarak GitHub repo'nuzun ana dizinine yükleyin")
+
+# Index sayfası oluştur
+create_index_page()
